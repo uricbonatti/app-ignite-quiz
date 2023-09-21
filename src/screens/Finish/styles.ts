@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { THEME } from '../../styles/theme';
 
 export const styles = StyleSheet.create({
@@ -10,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   message: {
     alignItems: 'center',
-    marginBottom: 80,
+    marginBottom: 80
   },
   title: {
     color: THEME.COLORS.GREY_100,
@@ -23,5 +24,5 @@ export const styles = StyleSheet.create({
     fontFamily: THEME.FONTS.REGULAR,
     fontSize: 16,
     marginTop: 8
-  },
+  }
 });

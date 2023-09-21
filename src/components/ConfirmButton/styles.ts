@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { THEME } from '../../styles/theme';
 
 export const styles = StyleSheet.create({
@@ -18,5 +19,5 @@ export const styles = StyleSheet.create({
     fontFamily: 'Roboto_700Bold',
     fontSize: 16,
     marginRight: 7
-  },
+  }
 });

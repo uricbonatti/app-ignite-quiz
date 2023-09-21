@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { THEME } from '../../styles/theme';
 
 export const styles = StyleSheet.create({
@@ -13,12 +14,12 @@ export const styles = StyleSheet.create({
     marginLeft: 4
   },
   level1: {
-    height: 6,
+    height: 6
   },
   level2: {
-    height: 12,
+    height: 12
   },
   level3: {
-    height: 20,
-  },
+    height: 20
+  }
 });

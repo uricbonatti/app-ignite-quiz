@@ -6,20 +6,10 @@ import { THEME } from '../../styles/theme';
 
 export function ConfirmButton({ ...rest }: TouchableOpacityProps) {
   return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      style={styles.container}
-      {...rest}
-    >
-      <Text style={styles.title}>
-        Confirmar
-      </Text>
+    <TouchableOpacity activeOpacity={0.7} style={styles.container} {...rest}>
+      <Text style={styles.title}>Confirmar</Text>
 
-      <Check
-        color={THEME.COLORS.WHITE}
-        weight="bold"
-        size={24}
-      />
+      <Check color={THEME.COLORS.WHITE} weight="bold" size={24} />
     </TouchableOpacity>
   );
 }

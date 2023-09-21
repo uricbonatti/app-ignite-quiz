@@ -1,31 +1,30 @@
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { Alert, ScrollView, View } from 'react-native';
 
-import { useNavigation, useRoute } from '@react-navigation/native';
-
 import { styles } from './styles';
-
-import { QUIZ } from '../../data/quiz';
-import { historyAdd } from '../../storage/quizHistoryStorage';
-
+import { ConfirmButton } from '../../components/ConfirmButton';
 import { Loading } from '../../components/Loading';
+import { OutlineButton } from '../../components/OutlineButton';
 import { Question } from '../../components/Question';
 import { QuizHeader } from '../../components/QuizHeader';
-import { ConfirmButton } from '../../components/ConfirmButton';
-import { OutlineButton } from '../../components/OutlineButton';
+import { QUIZ } from '../../data/quiz';
+import { historyAdd } from '../../storage/quizHistoryStorage';
 
 interface Params {
   id: string;
 }
 
-type QuizProps = typeof QUIZ[0];
+type QuizProps = (typeof QUIZ)[0];
 
 export function Quiz() {
   const [points, setPoints] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quiz, setQuiz] = useState<QuizProps>({} as QuizProps);
-  const [alternativeSelected, setAlternativeSelected] = useState<null | number>(null);
+  const [alternativeSelected, setAlternativeSelected] = useState<null | number>(
+    null
+  );
 
   const { navigate } = useNavigation();
 
@@ -35,7 +34,7 @@ export function Quiz() {
   function handleSkipConfirm() {
     Alert.alert('Pular', 'Deseja realmente pular a questão?', [
       { text: 'Sim', onPress: () => handleNextQuestion() },
-      { text: 'Não', onPress: () => { } }
+      { text: 'Não', onPress: () => {} }
     ]);
   }
 
@@ -50,13 +49,13 @@ export function Quiz() {
 
     navigate('finish', {
       points: String(points),
-      total: String(quiz.questions.length),
+      total: String(quiz.questions.length)
     });
   }
 
   function handleNextQuestion() {
     if (currentQuestion < quiz.questions.length - 1) {
-      setCurrentQuestion(prevState => prevState + 1)
+      setCurrentQuestion((prevState) => prevState + 1);
     } else {
       handleFinished();
     }
@@ -68,7 +67,7 @@ export function Quiz() {
     }
 
     if (quiz.questions[currentQuestion].correct === alternativeSelected) {
-      setPoints(prevState => prevState + 1);
+      setPoints((prevState) => prevState + 1);
     }
 
     setAlternativeSelected(null);
@@ -78,20 +77,20 @@ export function Quiz() {
     Alert.alert('Parar', 'Deseja parar agora?', [
       {
         text: 'Não',
-        style: 'cancel',
+        style: 'cancel'
       },
       {
         text: 'Sim',
         style: 'destructive',
         onPress: () => navigate('home')
-      },
+      }
     ]);
 
     return true;
   }
 
   useEffect(() => {
-    const quizSelected = QUIZ.filter(item => item.id === id)[0];
+    const quizSelected = QUIZ.filter((item) => item.id === id)[0];
     setQuiz(quizSelected);
     setIsLoading(false);
   }, []);
@@ -103,7 +102,7 @@ export function Quiz() {
   }, [points]);
 
   if (isLoading) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (
@@ -130,6 +129,6 @@ export function Quiz() {
           <ConfirmButton onPress={handleConfirm} />
         </View>
       </ScrollView>
-    </View >
+    </View>
   );
 }

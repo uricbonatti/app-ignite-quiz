@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 
-import { THEME } from '../../styles/theme';
 import { styles } from './styles';
+import { THEME } from '../../styles/theme';
 
 const LEVEL_COLORS = [
   THEME.COLORS.BRAND_LIGHT,
@@ -11,7 +11,7 @@ const LEVEL_COLORS = [
 
 type Props = {
   level: number;
-}
+};
 
 export function LevelBars({ level }: Props) {
   const backgroundColor = LEVEL_COLORS[level - 1];
@@ -19,8 +19,12 @@ export function LevelBars({ level }: Props) {
   return (
     <View style={styles.bars}>
       <View style={[styles.level, styles.level1, { backgroundColor }]} />
-      <View style={[styles.level, styles.level2, level > 1 && { backgroundColor }]} />
-      <View style={[styles.level, styles.level3, level > 2 && { backgroundColor }]} />
+      <View
+        style={[styles.level, styles.level2, level > 1 && { backgroundColor }]}
+      />
+      <View
+        style={[styles.level, styles.level3, level > 2 && { backgroundColor }]}
+      />
     </View>
   );
 }

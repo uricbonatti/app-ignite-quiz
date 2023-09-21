@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { THEME } from '../../styles/theme';
 
 export const styles = StyleSheet.create({
@@ -10,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: THEME.COLORS.BRAND_MID,
-    marginRight: 16,
+    marginRight: 16
   },
   title: {
     color: THEME.COLORS.WHITE,

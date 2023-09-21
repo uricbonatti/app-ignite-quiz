@@ -15,6 +15,6 @@ export const styles = StyleSheet.create({
     marginTop: 32
   },
   cards: {
-    paddingTop: 32,
+    paddingTop: 32
   }
 });

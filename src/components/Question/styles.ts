@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+
 import { THEME } from '../../styles/theme';
 
 const { width } = Dimensions.get('window');
@@ -10,7 +11,7 @@ export const styles = StyleSheet.create({
     width: width - MARGIN_HORIZONTAL,
     backgroundColor: THEME.COLORS.GREY_700,
     borderRadius: 12,
-    padding: 22,
+    padding: 22
   },
   title: {
     fontFamily: 'Roboto_700Bold',
@@ -18,5 +19,5 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     marginBottom: 18
-  },
+  }
 });
