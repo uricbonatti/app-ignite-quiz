@@ -4,7 +4,10 @@ export declare global {
       home: undefined;
       quiz: { id: string };
       history: undefined;
-      finish: { total: string; points: string };
+      finish: {
+        total: string;
+        points: string;
+      };
     }
   }
 }
